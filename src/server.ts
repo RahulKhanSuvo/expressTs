@@ -18,7 +18,7 @@ app.get('/', logger, (req: Request, res: Response) => {
 })
 app.use("/users", userRoutes)
 
-// app.use("/auth", authRoutes)
+app.use("/auth", authRoutes)
 
 // todo crud
 app.post("/todos", async (req: Request, res: Response) => {
