@@ -3,6 +3,7 @@ import config from './config';
 import initDB, { pool } from './config/db';
 import logger from './middleware/logger';
 import { userRoutes } from './modules/user/user.routes';
+import { authRoutes } from './modules/auth/auth.route';
 const app = express();
 const port = config.port;
 // parser
@@ -16,6 +17,8 @@ app.get('/', logger, (req: Request, res: Response) => {
     res.send('Hello World nai!')
 })
 app.use("/users", userRoutes)
+
+// app.use("/auth", authRoutes)
 
 // todo crud
 app.post("/todos", async (req: Request, res: Response) => {
